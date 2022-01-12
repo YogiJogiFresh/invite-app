@@ -1,28 +1,35 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app id="app">
+    <!--- Suit up Animation --->
+    <Invitation name = "Hello" />
+  </v-app>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import Invitation from './components/Invitation.vue';
 
-export default {
-  name: 'App',
+@Component({
   components: {
-    HelloWorld
+    Invitation,
   }
-}
+})
+export default class App extends Vue {}
 </script>
 
-<style>
+<style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Source Code Pro', monospace;  
+  font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #dddddd;
+  background-color: #2e2c29;
+  display: flex;
+  justify-content: center;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+::-webkit-scrollbar {
+    display: none;
 }
 </style>
